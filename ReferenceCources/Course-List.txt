@@ -1,1 +1,19 @@
+Refer FreeCodeCamp for all the necessary Cources. ofc, the videos are longer and boring but their quality is next to none.
 
+FastAPI: https://www.youtube.com/watch?v=tLKKmouUams
+
+API Integration (python+FastAPI) : https://www.youtube.com/watch?v=rkPIftzu1pQ
+
+Python OOP: https://www.youtube.com/watch?v=Ej_02ICOIgs
+
+Python CSV Tutorial : https://www.youtube.com/watch?v=q5uM4VKywbA
+
+jinja2 Templates Tutorial: https://www.youtube.com/watch?v=bxhXQG1qJPM
+
+Full Front End (HTML*CSS*Js): https://www.youtube.com/watch?v=zJSY8tbf_ys&t=47680s
+
+PySerial Tutorial (Just in case for debugging using Serial Port): https://www.youtube.com/watch?v=Pf-cGzOQmXU&list=PLY1rn9AjOKu0jgWfzcY1kLsw16uYB0LoP
+
+RPi Tutorials (For Beginners): https://www.youtube.com/watch?v=1WDagiA8fdU&list=PLGs0VKk2DiYxdMjCJmcP6jt4Yw6OHK85O
+
+All Protocols Explained (SPI,i2c,UART,CAN): https://www.youtube.com/watch?v=gFwly1iFaEo&t=380s
