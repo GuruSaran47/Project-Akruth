@@ -81,9 +81,4 @@ class writeFiles:
     def __init__(self,filePath):
         self.path = filePath
     
-class readLine:
-    path = " "
-
-    def __init__(self,filePath):
-        self.path = filePath
 
