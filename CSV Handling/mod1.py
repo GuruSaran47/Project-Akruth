@@ -32,6 +32,7 @@ class readFile:
     path = " "
     data = " "
     fileName = ""
+        
     def __init__(self,filename):
         self.fileName = filename
         cwd = os.getcwd()
@@ -39,11 +40,13 @@ class readFile:
         self.path = cwd
     
     def readFile(self):
-      df = pd.read_csv(self.path)
-      self.data = df
+        df = pd.read_csv(self.path)
+        self.data = df
 
     def returnPath(self):
         print(self.path)
+
+    def returnFileName(self):
         print(self.fileName)
     
     def returnFileContent(self):
