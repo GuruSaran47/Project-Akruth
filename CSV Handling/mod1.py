@@ -88,7 +88,7 @@ class writeToFile:
     # 3. returnFileName(): returns file name useful while debugging
     # 5. returnColumns(): returns a list of columns in csv
     # 6. buildNewLineDict(): for building new line dictionary with the passed values to update the csv
-    # 7. writeLinr(): for adding new line into the csv
+    # 7. writeLine(): for adding new line into the csv
     """
     """
     # class level scope declerations are:
