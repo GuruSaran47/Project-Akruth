@@ -24,10 +24,12 @@ class readFile:
     """
     The planned functions are:
     # 1. readFile(): just to read the content and store it into a data variable only meant for cases where we don't need returning output
-    # 2. printPath(): this is a debug function to deal with fileNotFound exceptions incase they occur
-    # 3. printFileContent(): prints all the content of the read csvFile
-    # 4. returnFirstLine(): returns the first line of the csv
-    # 5. returnLastLint(): returns the last line of the csv
+    # 2. returnPath(): this is a debug function to deal with fileNotFound exceptions incase they occur
+    # 3. returnFileName(): returns file name useful while debugging
+    # 4. returnFileContent(): prints all the content of the read csvFile
+    # 5. returnColumns(): returns a list of columns in csv
+    # 6. returnFirstLine(): returns the first line of the csv
+    # 7. returnLastLine(): returns the last line of the csv 
     """
     """
     
@@ -35,11 +37,67 @@ class readFile:
     # 1. path
     # 2. data
     # 3. fileName
+    # 4. Columns in CSV
 
     """
     path = " "
-    data = " "
+    data = []
     fileName = " "
+    columns = []
+    def __init__(self,filename):
+        self.fileName = filename
+        cwd = os.getcwd()
+        cwd = cwd+f"\handling_csv\\"+filename
+        self.path = cwd
+    
+    def readFile(self):
+        df = pd.read_csv(self.path)
+        self.data = df.values.tolist()
+
+    def returnPath(self):
+        print(self.path)
+
+    def returnFileName(self):
+        print(self.fileName)
+    
+    def returnFileContent(self):
+        self.readFile()
+        print(self.data)
+
+    def returnColumns(self):
+        df = pd.read_csv(self.path)
+        self.columns = df.columns.tolist()
+        
+
+    def returnFirstLine(self):
+        self.readFile()
+        print(self.data[0])
+    
+    def returnLastLine(self):
+        self.readFile()
+        print(self.data[len(self.data)-1])
+        
+        
+    
+
+class writeToFile:
+    """
+    # class level scope declerations are:
+    # 1. path
+    # 2. data
+    # 3. fileName
+    # 4. Columns in CSV
+    # 5. dictionary for new line entry
+    # 6. new line for first reading line from user
+            
+    """
+
+    fileName = " "
+    path = " "
+    data = " "
+    newLine = " "
+    newlineDict = {}
+    col = [] #for columns list
     
     def __init__(self,filename):
         self.fileName = filename
@@ -49,36 +107,32 @@ class readFile:
     
     def readFile(self):
         df = pd.read_csv(self.path)
-        self.data = df
+        self.data = df.values.tolist()
 
     def returnPath(self):
         print(self.path)
 
     def returnFileName(self):
         print(self.fileName)
-    
-    def returnFileContent(self):
-        df = pd.read_csv(self.path)
-        self.data = df.values.tolist()
-        print(self.data)
 
-    def returnFirstLine(self):
+    def returnColumns(self):
         df = pd.read_csv(self.path)
-        self.data = df.values.tolist()
-        print(self.data[0])
+        self.col = df.columns.tolist()
     
-    def returnLastLine(self):
-        df = pd.read_csv(self.path)
-        self.data = df.values.tolist()
-        print(self.data[len(self.data)-1])
-        
+    def buildNewLineDict(self):
+        for individual_column,individual_value in zip(self.col,self.newLine):
+            self.newlineDict[individual_column] = individual_value
     
 
-class writeFiles:
-    path = " "
-    data = " "
-    
-    def __init__(self,filePath):
-        self.path = filePath
-    
+
+    def writeLine(self,line):
+        self.newLine = line
+        self.readFile()
+        self.returnColumns()
+        self.buildNewLineDict()
+        df1 = pd.read_csv(self.path)
+        df1.loc[len(df1)] = self.newlineDict
+        df1.to_csv(self.path,index = False)
+
+
 
