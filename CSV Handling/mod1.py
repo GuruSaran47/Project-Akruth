@@ -23,16 +23,24 @@ and do edit path variables if and when needed for changes
 class readFile:
     """
     The planned functions are:
-    1. readFile(): just to read the content and store it into a data variable only meant for cases where we don't need returning output
-    2. printPath(): this is a debug function to deal with fileNotFound exceptions incase they occur
-    3. printFileContent(): prints all the content of the read csvFile
-    4. returnFirstLine(): returns the first line of the csv
-    5. returnLastLint(): returns the last line of the csv
+    # 1. readFile(): just to read the content and store it into a data variable only meant for cases where we don't need returning output
+    # 2. printPath(): this is a debug function to deal with fileNotFound exceptions incase they occur
+    # 3. printFileContent(): prints all the content of the read csvFile
+    # 4. returnFirstLine(): returns the first line of the csv
+    # 5. returnLastLint(): returns the last line of the csv
+    """
+    """
+    
+    # class level scope declerations are:
+    # 1. path
+    # 2. data
+    # 3. fileName
+
     """
     path = " "
     data = " "
-    fileName = ""
-        
+    fileName = " "
+    
     def __init__(self,filename):
         self.fileName = filename
         cwd = os.getcwd()
