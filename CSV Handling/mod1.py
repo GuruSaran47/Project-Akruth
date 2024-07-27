@@ -21,27 +21,46 @@ and do edit path variables if and when needed for changes
 
 
 class readFile:
+    """
+    The planned functions are:
+    1. readFile(): just to read the content and store it into a data variable only meant for cases where we don't need returning output
+    2. printPath(): this is a debug function to deal with fileNotFound exceptions incase they occur
+    3. printFileContent(): prints all the content of the read csvFile
+    4. returnFirstLine(): returns the first line of the csv
+    5. returnLastLint(): returns the last line of the csv
+    """
     path = " "
     data = " "
     fileName = ""
     def __init__(self,filename):
         self.fileName = filename
         cwd = os.getcwd()
-        cwd = cwd+f"\pythaan\handling_csv\\"+filename
+        cwd = cwd+f"\handling_csv\\"+filename
         self.path = cwd
     
     def readFile(self):
       df = pd.read_csv(self.path)
       self.data = df
 
-    def printPath(self):
+    def returnPath(self):
         print(self.path)
         print(self.fileName)
     
-    def printFileContent(self):
+    def returnFileContent(self):
         df = pd.read_csv(self.path)
-        self.data = df
+        self.data = df.values.tolist()
         print(self.data)
+
+    def returnFirstLine(self):
+        df = pd.read_csv(self.path)
+        self.data = df.values.tolist()
+        print(self.data[0])
+    
+    def returnLastLine(self):
+        df = pd.read_csv(self.path)
+        self.data = df.values.tolist()
+        print(self.data[len(self.data)-1])
+        
     
 
 class writeFiles:
