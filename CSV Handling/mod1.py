@@ -4,8 +4,10 @@ import numpy as np
 import os
 """ 
 *    Two major classes are needed
-*    1. for reading in mass
-*    2. for writing in mass
+*    readFile class :
+*        1. for reading in mass
+*        2. for writing in mass
+*    writeToFile class :    
 *    3. for reading specific line
 *    4. writing to the specific line
 """
