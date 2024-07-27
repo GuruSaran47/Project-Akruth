@@ -81,6 +81,15 @@ class readFile:
     
 
 class writeToFile:
+     """
+    The planned functions are:
+    # 1. readFile(): just to read the content and store it into a data variable only meant for cases where we don't need returning output
+    # 2. returnPath(): this is a debug function to deal with fileNotFound exceptions incase they occur
+    # 3. returnFileName(): returns file name useful while debugging
+    # 5. returnColumns(): returns a list of columns in csv
+    # 6. buildNewLineDict(): for building new line dictionary with the passed values to update the csv
+    # 7. writeLinr(): for adding new line into the csv
+    """
     """
     # class level scope declerations are:
     # 1. path
@@ -123,8 +132,6 @@ class writeToFile:
         for individual_column,individual_value in zip(self.col,self.newLine):
             self.newlineDict[individual_column] = individual_value
     
-
-
     def writeLine(self,line):
         self.newLine = line
         self.readFile()
@@ -133,6 +140,5 @@ class writeToFile:
         df1 = pd.read_csv(self.path)
         df1.loc[len(df1)] = self.newlineDict
         df1.to_csv(self.path,index = False)
-
 
 
